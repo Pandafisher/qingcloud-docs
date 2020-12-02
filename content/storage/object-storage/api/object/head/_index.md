@@ -59,7 +59,7 @@ Range: bytes=<byte-range>
 | Content-Length | Integer | 正常情况下为对象大小, 错误情况下没意义 |
 | Last-Modified | Date | 对象更新时间 |
 | ETag | String | 服务器端为对象内容生成的唯一标志 |
-| x-qs-storage-class | String | 该对象的存储级别，支持的存储级别为 "STANDARD" 和 "STANDARD_IA" |
+| x-qs-storage-class | String | 该对象的存储级别，支持的存储级别为 "STANDARD", "STANDARD_IA" 和 "GLACIER"|
 | x-qs-object-type | String | 该对象的类型，当对象类型为appendable时，返回该header |
 | x-qs-next-append-position | String |对象下次追加写的位置，当对象类型为appendable时，返回该header|
 

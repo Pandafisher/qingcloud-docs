@@ -65,7 +65,7 @@ Authorization: <authorization-string>
             }
         },
         {
-            "id": "change-storage-class-in-data",
+            "id": "change-storage-class-ia-in-data",
             "status": "enabled",
             "filter": {
                 "prefix": "data/"
@@ -74,7 +74,18 @@ Authorization: <authorization-string>
                 "storage_class": "STANDARD_IA",
                 "days": 30
             }
-        }
+        },
+        {
+            "id": "change-storage-class-glacier-in-data",
+            "status": "enabled",
+            "filter": {
+                "prefix": "data/"
+            },
+            "transition": {
+                "storage_class": "GLACIER",
+                "days": 90
+            }
+        },
     ]
 }
 
@@ -105,10 +116,10 @@ Json 消息体
 | prefix | String | 对 Object 名称 前缀为 prefix 的 Object 应用此规则，空字符串表示匹配整个 Bucket 中的 Object。默认值为空字符串。不支持正则表达式。| No |
 | expiration | Dict | 用于删除 Object 的规则，有效的键为 "days"。"days" 必须是正整数，否则返回 400 invalid_request。对于匹配前缀（prefix) 的对象在最后修改时间的指定天数（days）后删除该对象。| No |
 | abort_incomplete_multipart_upload |Dict | 用于取消未完成的分段上传的规则，有效的键为 "days_after_initiation"。"days_after_initiation" 必须是正整数，否则返回 400 invalid_request。| No |
-| transition | Dict | 用于变更存储级别的规则，有效的键为 "days", "storage_class"。days 必须 >= 30, 否则返回 400 invalid_request。对于匹配前缀（prefix) 的对象在最后修改时间的指定天数（days）后变更到低频存储。| No |
+| transition | Dict | 用于变更存储级别的规则，有效的键为 "days", "storage_class"。days 必须 >= 30, 否则返回 400 invalid_request。对于匹配前缀（prefix) 的对象在最后修改时间的指定天数（days）后变更到低频存储 或 冷存储 (glacier)。| No |
 | days | Integer | 在对象最后修改时间的指定天数后执行操作。 | No |
 | days_after_initiation | Integer | 在初始化分段上传的指定天数后执行操作。| Yes |
-| storage_class | Integer | 要变更至的 storage_class，支持的值为 STANDARD_IA"。 | Yes |
+| storage_class | Integer | 要变更至的 storage_class，支持的值为 STANDARD_IA" 或 "GLACIER"。 | Yes |
 
 ## Response Headers
 

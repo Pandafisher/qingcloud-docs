@@ -45,7 +45,7 @@ Authorization: <authorization-string>
 | Content-MD5 | String | 对象实体的 MD5 值，用于检查对象在传输过程中字符是否出错或被篡改 | No |
 | Content-Type | String | 对象的类型 | No |
 | Expect | String | 如果请求头附加这个参数，不需要附带 request body，对象存储服务端判断可以接受此请求，则返回 100 CONTINUE | No |
-| x-qs-storage-class | String | 指定该对象的存储级别，支持的存储级别为 "STANDARD" 和 "STANDARD_IA"，默认存储级别为"STANDARD"。存储级别错误将返回 400 INVALID_REQUEST | No |
+| x-qs-storage-class | String | 指定该对象的存储级别，支持的存储级别为 "STANDARD", "STANDARD_IA" 和 "GLACIER"，默认存储级别为"STANDARD"。存储级别错误将返回 400 INVALID_REQUEST | No |
 
 ## Request Body
 

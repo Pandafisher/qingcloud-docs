@@ -48,7 +48,7 @@ Authorization: <authorization-string>
 | x-qs-copy-source-If-Unmodified-Since | Date | 如果源对象自从指定时间往后没有被修改过，则正常复制对象, 否则返回 412 PRECONDITION FAILED | No |
 | x-qs-copy-source-If-Match | String | 如果源对象内容的 ETag 值符合给定的值，则正常复制对象，否则返回 412 PRECONDITION FAILED | No |
 | x-qs-copy-source-If-None-Match | String | 如果源对象内容的 ETag 值不同于给定的值，则正常复制对象，否则返回 412 PRECONDITION FAILED | No |
-| x-qs-storage-class | String | 指定该对象的存储级别，支持的存储级别为 "STANDARD" 和 "STANDARD_IA"，默认存储级别为"STANDARD"。如果 Copy Source 与该对象相同，将变更该对象的存储级别。存储级别错误将返回 400 INVALID_REQUEST | No |
+| x-qs-storage-class | String | 指定该对象的存储级别，支持的存储级别为 "STANDARD"，"STANDARD_IA" 和 "GLACIER"，默认存储级别为"STANDARD"。如果 Copy Source 与该对象相同，将变更该对象的存储级别。存储级别错误将返回 400 INVALID_REQUEST | No |
 
 ## Request Body
 

@@ -37,7 +37,7 @@ Authorization: <authorization-string>
 | Header Name | Type | Description | Required |
 | --- | --- | --- | --- |
 | Content-Type | String | 对象的类型 | No |
-| x-qs-storage-class | String | 指定该对象的存储级别，支持的存储级别为 "STANDARD" 和 "STANDARD_IA"，默认存储级别为"STANDARD"。存储级别错误将返回 400 INVALID_REQUEST | No |
+| x-qs-storage-class | String | 指定该对象的存储级别，支持的存储级别为 "STANDARD", "STANDARD_IA" 和 "GLACIER"，默认存储级别为"STANDARD"。存储级别错误将返回 400 INVALID_REQUEST | No |
 
 ## Request Body
 
